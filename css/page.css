@@ -1098,7 +1098,8 @@ body.cat03 .noswiper1 li h3::after {
   width: 1.5rem;
   height: 1.5rem;
   margin: 0 1rem;
-  border-radius: 10rem;
+  /* border-radius: 10rem; */
+  border-radius: 50%;
   background-color: white;
   opacity: 1 !important;
   transform: 0s;
