@@ -1094,24 +1094,50 @@ body.cat03 .noswiper1 li h3::after {
   display: flex;
   justify-content: center;
 }
-.swiperpt-nav .swiperpt-pagination .swiper-pagination-bullet {
-  /* width: 1.5rem;
-  height: 1.5rem; */
-  width: calc(1.5rem + 1px);
-  height: calc(1.5rem + 1px);
-
+/* .swiperpt-nav .swiperpt-pagination .swiper-pagination-bullet {
+  width: 1.5rem;
+  height: 1.5rem;
   margin: 0 1rem;
-  /* border-radius: 10rem; */
+  border-radius: 10rem;
   border-radius: 50%;
   background-color: white;
   opacity: 1 !important;
-  transform: none;
+  transform: 0s;
 }
 .swiperpt-nav
   .swiperpt-pagination
   .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #3c2a1c;
+} */
+
+/* Base bullet */
+.swiperpt-nav .swiperpt-pagination .swiper-pagination-bullet {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 1rem;
+  border-radius: 50%; /* Always perfect circle */
+  background-color: white;
+  opacity: 1 !important;
+  transform: translateZ(0); /* Force GPU smoothing */
+  box-sizing: border-box; /* Prevent box model surprises */
+  display: inline-block; /* Consistent sizing behavior */
 }
+
+/* Active bullet */
+.swiperpt-nav
+  .swiperpt-pagination
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #3c2a1c;
+}
+
+/* High DPI / mobile subpixel rounding fix */
+@supports (-webkit-overflow-scrolling: touch) {
+  .swiperpt-nav .swiperpt-pagination .swiper-pagination-bullet {
+    width: calc(1.5rem + 1px); /* +1px to cover rounding gap */
+    height: calc(1.5rem + 1px);
+  }
+}
+
 .swiperpt-nav .swiperpt-pagination .swiper-pagination-bullet:hover {
   scale: 1.1;
 }
