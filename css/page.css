@@ -1095,14 +1095,17 @@ body.cat03 .noswiper1 li h3::after {
   justify-content: center;
 }
 .swiperpt-nav .swiperpt-pagination .swiper-pagination-bullet {
-  width: 1.5rem;
-  height: 1.5rem;
+  /* width: 1.5rem;
+  height: 1.5rem; */
+  width: calc(1.5rem + 1px);
+  height: calc(1.5rem + 1px);
+
   margin: 0 1rem;
   /* border-radius: 10rem; */
   border-radius: 50%;
   background-color: white;
   opacity: 1 !important;
-  transform: 0s;
+  transform: none;
 }
 .swiperpt-nav
   .swiperpt-pagination
